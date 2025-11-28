@@ -2,13 +2,13 @@
 <html lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>HealthLab - Seguimiento de Muestra</title>
+<title>HealthLab - Mis Citas</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
-<script id="tailwind-config">
+<script>
         tailwind.config = {
             darkMode: "class",
             theme: {
@@ -17,175 +17,156 @@
                         "primary": "#137fec",
                         "background-light": "#f6f7f8",
                         "background-dark": "#101922",
-                        "foreground-light": "#111418",
-                        "foreground-dark": "#f0f2f4",
-                        "card-light": "#ffffff",
-                        "card-dark": "#1b2734",
-                        "muted-light": "#617589",
-                        "muted-dark": "#90a3b8",
-                        "border-light": "#e5e7eb",
-                        "border-dark": "#344558",
-                        "success-light": "#22c55e",
-                        "success-dark": "#4ade80",
                     },
                     fontFamily: {
                         "display": ["Inter"]
                     },
                     borderRadius: {
-                        "DEFAULT": "0.5rem",
-                        "lg": "0.75rem",
-                        "xl": "1rem",
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
                         "full": "9999px"
-                    },
-                    keyframes: {
-                        progress: {
-                            '0%': {
-                                width: '0%'
-                            },
-                            '100%': {
-                                width: 'var(--progress-width, 75%)'
-                            },
-                        },
-                    },
-                    animation: {
-                        'progress-bar': 'progress 1s ease-out forwards',
                     },
                 },
             },
         }
     </script>
 <style>
-        .timeline-item:not(:last-child)::before {
-            content: "";
-            position: absolute;
-            left: 20px;
-            top: 48px;
-            bottom: -16px;
-            width: 2px;
-            background-color: #e5e7eb;}
-        .dark .timeline-item:not(:last-child)::before {
-            background-color: #344558;}
-        .timeline-item[data-status="completed"]::before {
-             background: linear-gradient(to bottom, #22c55e, #137fec);}
-        .dark .timeline-item[data-status="completed"]::before {
-             background: linear-gradient(to bottom, #4ade80, #137fec);}
+        .material-symbols-outlined {
+            font-variation-settings:
+            'FILL' 0,
+            'wght' 400,
+            'GRAD' 0,
+            'opsz' 24
+        }
     </style>
 </head>
-<body class="bg-background-light dark:bg-background-dark font-display text-foreground-light dark:text-foreground-dark">
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
 <div class="flex flex-col min-h-screen">
-<header class="sticky top-0 z-10 bg-card-light/80 dark:bg-card-dark/80 backdrop-blur-sm border-b border-border-light dark:border-border-dark">
+<header class="bg-white dark:bg-background-dark/50 backdrop-blur-sm sticky top-0 z-10 border-b border-gray-200 dark:border-gray-800">
 <div class="container mx-auto px-4 sm:px-6 lg:px-8">
 <div class="flex items-center justify-between h-16">
 <div class="flex items-center gap-4">
-<span class="material-symbols-outlined text-primary text-3xl">science</span>
-<h1 class="text-xl font-bold">HealthLab</h1>
+<div class="text-primary">
+<svg class="h-8 w-8" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path></svg>
 </div>
-<nav class="hidden md:flex items-center gap-6">
-<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Inicio</a>
-<a class="text-sm font-medium text-primary" href="#">Citas</a>
-<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Resultados</a>
-<a class="text-sm font-medium hover:text-primary transition-colors" href="#">Perfil</a>
+<h1 class="text-xl font-bold text-gray-900 dark:text-white">HealthLab</h1>
+</div>
+<nav class="hidden md:flex items-center gap-8">
+<a class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary" href="#">Inicio</a>
+<a class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary" href="#">Servicios</a>
+<a class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary" href="#">Resultados</a>
+<a class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary" href="#">Contacto</a>
 </nav>
 <div class="flex items-center gap-4">
-<button class="p-2 rounded-full hover:bg-primary/10 transition-colors">
+<button class="p-2 rounded-full text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">
 <span class="material-symbols-outlined">notifications</span>
 </button>
-<div class="size-10 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuApHgvvJqjDDwGYG4BIZ9utlSuMZo2vZj0BCOhz_74tDuWr4zXGdhRiOcVpCX0xQHZNQVHTYjYG_--bXfBHKU6KlCPcJd6LLok2cKP98vsVh4QsYfHd5-mFI93L26i58bGvzH805yzrYiGKrmNlJq5Qr_wmYZMMUhL02vVnzyPaQVC6f68x5GJjLyhCsElqnRuNMe9dyPOnPSYfcaquMm4Lwe4FXW158IMdJf-oEzZSqzYY-lPAy0Wbm2MniquATDwIGnWwUzNgeR0");'></div>
+<div class="w-10 h-10 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBymLXhmwS9D3S6K3jh90gZ7lSsxP4KFFCoE-Td3TzgxBVvwy6fJ1ZuzhgUJrTd3iRjrFDj-fsu08johdZSRVELTnITPqCRmJ8qMYdHUEKWnwzkGJLk7ewDGs2A9i-lPm6xEqY8VOhmDh9VkQK9mdHe-91Yn7wAPBfdlztFiYK581bwnuK_gHa8-ZmCbE07p6BT3JGdOQACYlnQ9gn5RvfLqpVhHuiB80VgCZGmpMgkLWu7sr5luAXz1HUDmqWJZqW8v3JcBwcfvXA");'></div>
 </div>
 </div>
 </div>
 </header>
 <main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-<div class="max-w-3xl mx-auto">
-<h2 class="text-3xl font-extrabold tracking-tight mb-4">Seguimiento de Muestra</h2>
-<div class="bg-card-light dark:bg-card-dark p-6 rounded-xl shadow-sm mb-8">
-<div class="flex flex-col md:flex-row items-start gap-6">
+<div class="max-w-4xl mx-auto">
+<h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">Mis Citas</h2>
+<div class="space-y-6">
+<div class="bg-white dark:bg-background-dark/70 rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg border border-transparent dark:border-gray-800">
+<div class="p-6 flex flex-col md:flex-row gap-6">
 <div class="flex-grow">
-<p class="text-sm text-muted-light dark:text-muted-dark font-medium mb-1">Código de Muestra</p>
-<p class="text-lg font-bold text-primary mb-3">2023-AB-12345</p>
-<p class="text-sm text-muted-light dark:text-muted-dark font-medium mb-1">Tipo de Análisis</p>
-<p class="font-semibold mb-3">Hemograma Completo</p>
-<div class="flex items-center gap-2 text-muted-light dark:text-muted-dark">
-<span class="material-symbols-outlined text-lg">hourglass_top</span>
-<p class="text-sm font-medium">Tiempo estimado restante: <span class="text-foreground-light dark:text-foreground-dark font-bold">2 horas</span></p>
+<div class="flex items-center gap-3 mb-2">
+<span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 dark:bg-blue-900/50 text-primary">
+                                        Próxima
+                                    </span>
+</div>
+<h3 class="text-xl font-bold text-gray-900 dark:text-white">Análisis de Sangre</h3>
+<div class="mt-2 text-gray-600 dark:text-gray-400 space-y-1 text-sm">
+<p class="flex items-center gap-2"><span class="material-symbols-outlined text-base">calendar_today</span> 15 de Julio, 2024</p>
+<p class="flex items-center gap-2"><span class="material-symbols-outlined text-base">schedule</span> 10:00 AM</p>
+<p class="flex items-center gap-2"><span class="material-symbols-outlined text-base">location_on</span> Sede: Clínica Central</p>
+</div>
+<div class="mt-6 flex flex-wrap gap-3">
+<button class="inline-flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium rounded-lg bg-primary text-white hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary dark:focus:ring-offset-background-dark">
+<span class="material-symbols-outlined text-base">edit_calendar</span>
+                                        Reprogramar
+                                    </button>
+<button class="inline-flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium rounded-lg bg-primary/10 dark:bg-primary/20 text-primary hover:bg-primary/20 dark:hover:bg-primary/30 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary dark:focus:ring-offset-background-dark">
+<span class="material-symbols-outlined text-base">cancel</span>
+                                        Cancelar Cita
+                                    </button>
 </div>
 </div>
-<div class="w-full md:w-48 h-32 rounded-lg bg-cover bg-center shrink-0" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuB9oxGDvL9Zosjfcf4JUPlWL5u3tSMv809jT-_jiOXXDlfWWuU5WfLQb8rjUdh3oE0QzXwV5duTInUZyfdQybja0oFYGfLmsUfOCRN2aFWVVBkV1fQE8AKoA9OPeHtaFPAaH4LVT6zuuQAH03yjSiRvgM5SglzCu66y5gV_aY3dvibmOm8IyzD4xTVZ_epKgCnWnnzHvKiVfjIuA9XP5WtxYUrfwmisQleNUDHE_EGmLK_J42cIbCI-JHKQ8MaXrDspBJx9ltwg5TY");'></div>
-</div>
-</div>
-<div class="bg-card-light dark:bg-card-dark p-6 rounded-xl shadow-sm mb-8">
-<div class="flex justify-between items-center mb-3">
-<h3 class="font-bold text-lg">Progreso General</h3>
-<p class="font-bold text-primary text-lg">75%</p>
-</div>
-<div class="w-full bg-background-light dark:bg-background-dark rounded-full h-3 overflow-hidden">
-<div class="bg-gradient-to-r from-primary to-success-light dark:to-success-dark h-3 rounded-full animate-progress-bar" style="--progress-width: 75%;"></div>
-</div>
-<div class="mt-4 p-4 rounded-lg bg-primary/10 flex items-center gap-3">
-<span class="material-symbols-outlined text-primary">info</span>
-<p class="text-sm text-primary font-medium">Hay una ligera demora en la etapa de validación. Estamos trabajando para resolverlo.</p>
-</div>
-</div>
-<div>
-<h3 class="text-xl font-bold mb-6">Línea de Tiempo</h3>
-<div class="relative space-y-10">
-<div class="timeline-item relative flex items-start gap-6" data-status="completed">
-<div class="flex-shrink-0 w-10 h-10 rounded-full bg-success-light dark:bg-success-dark flex items-center justify-center ring-4 ring-background-light dark:ring-background-dark relative z-10">
-<span class="material-symbols-outlined text-white">check</span>
-</div>
-<div>
-<p class="font-bold">Recepción</p>
-<p class="text-sm text-muted-light dark:text-muted-dark">10:00 AM - Ana García</p>
-<span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-success-light/20 text-success-light dark:bg-success-dark/20 dark:text-success-dark mt-2">Completado</span>
-</div>
-</div>
-<div class="timeline-item relative flex items-start gap-6" data-status="completed">
-<div class="flex-shrink-0 w-10 h-10 rounded-full bg-success-light dark:bg-success-dark flex items-center justify-center ring-4 ring-background-light dark:ring-background-dark relative z-10">
-<span class="material-symbols-outlined text-white">check</span>
-</div>
-<div>
-<p class="font-bold">Análisis</p>
-<p class="text-sm text-muted-light dark:text-muted-dark">10:30 AM - Carlos López</p>
-<span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-success-light/20 text-success-light dark:bg-success-dark/20 dark:text-success-dark mt-2">Completado</span>
-</div>
-</div>
-<div class="timeline-item relative flex items-start gap-6" data-status="in-progress">
-<div class="flex-shrink-0 w-10 h-10 rounded-full bg-primary flex items-center justify-center ring-4 ring-background-light dark:ring-background-dark relative z-10">
-<span class="material-symbols-outlined text-white animate-spin">autorenew</span>
-</div>
-<div>
-<p class="font-bold">Validación</p>
-<p class="text-sm text-muted-light dark:text-muted-dark">11:30 AM - Sofía Martínez</p>
-<span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-primary/20 text-primary mt-2">En Proceso</span>
-</div>
-</div>
-<div class="timeline-item relative flex items-start gap-6" data-status="pending">
-<div class="flex-shrink-0 w-10 h-10 rounded-full bg-border-light dark:bg-border-dark flex items-center justify-center ring-4 ring-background-light dark:ring-background-dark relative z-10">
-<span class="material-symbols-outlined text-muted-light dark:text-muted-dark">schedule</span>
-</div>
-<div>
-<p class="font-bold text-muted-light dark:text-muted-dark">Finalizado</p>
-<p class="text-sm text-muted-light dark:text-muted-dark">12:30 PM - Resultados Disponibles</p>
-<span class="inline-flex items-center px-2 py-0.5 rounded-full text-xs font-medium bg-muted-light/20 text-muted-light dark:bg-muted-dark/20 dark:text-muted-dark mt-2">Pendiente</span>
+<div class="md:w-1/3 lg:w-1/4 flex-shrink-0">
+<div class="w-full h-full bg-cover bg-center rounded-lg aspect-square md:aspect-auto" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBIcq5AgydtDEjfmPt8ockPmw2QjbMQtGn1WzqgIIWQbBp5vkkP_OocHSNqkg91A0rJwYGSwsANzSHX3hCRfJEZzO1ZjV4gfq1wCrLQV2rzfkZwziCPPCW7OCqumnpQx3OGzUzdjpbEu1CwsaciDLYdQkbfRAaDr_XEaUJ5mycBREaqZMhJ-rZK99IvsiPZvbyHZ248E8x5c65XYBYaZ2O_pIPyXf1cwyuwdcFYkAkAkIffihWMa7NF0Whhf52s53MoUYjaAad3Xns");'></div>
 </div>
 </div>
 </div>
+<div class="bg-white dark:bg-background-dark/70 rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg border border-transparent dark:border-gray-800">
+<div class="p-6 flex flex-col md:flex-row gap-6">
+<div class="flex-grow">
+<div class="flex items-center gap-3 mb-2">
+<span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 dark:bg-green-900/50 text-green-700 dark:text-green-300">
+                                        Completada
+                                    </span>
 </div>
-<div class="mt-12 text-center">
-<button class="bg-primary text-white font-bold py-3 px-6 rounded-lg shadow-lg hover:bg-primary/90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary focus:ring-offset-background-light dark:focus:ring-offset-background-dark transition-all duration-300 transform hover:scale-105">
-<span class="flex items-center gap-2">
-<span class="material-symbols-outlined">notifications_active</span>
-                            Notificarme cuando esté listo
-                        </span>
-</button>
+<h3 class="text-xl font-bold text-gray-900 dark:text-white">Examen de Orina</h3>
+<div class="mt-2 text-gray-600 dark:text-gray-400 space-y-1 text-sm">
+<p class="flex items-center gap-2"><span class="material-symbols-outlined text-base">calendar_today</span> 20 de Junio, 2024</p>
+<p class="flex items-center gap-2"><span class="material-symbols-outlined text-base">schedule</span> 09:30 AM</p>
+<p class="flex items-center gap-2"><span class="material-symbols-outlined text-base">location_on</span> Sede: Clínica Norte</p>
+</div>
+<div class="mt-6">
+<button class="inline-flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium rounded-lg bg-primary text-white hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary dark:focus:ring-offset-background-dark">
+<span class="material-symbols-outlined text-base">description</span>
+                                        Ver Resultados
+                                    </button>
+</div>
+</div>
+<div class="md:w-1/3 lg:w-1/4 flex-shrink-0">
+<div class="w-full h-full bg-cover bg-center rounded-lg aspect-square md:aspect-auto" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCzsh8A3BJylhrZ7W6xpHnVfBcOXmZb4K5uQoq9Vz0rp6cl1v3JOHoay6ZNkXgsWUPsmEwCQCf7-tWmpVbGdBfRvEoCHPX9jXbyxxr56Li_YCI1_eAeKpLHNAkcBCBHzEkswBP4NOo1VhIpDEYphw6svsy8PS3eWYTSNhMxSMF3TGWBDX0ON9gxjaFSkQBRcUNenxfyKwxXjxTvxTURWTIh6G56jMB7cG1HQIuN3vJymO8l4doyCtT75_E0QOzBSVauIiV7IOPOKA8");'></div>
+</div>
+</div>
+</div>
+<div class="bg-white dark:bg-background-dark/70 rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg border border-transparent dark:border-gray-800 opacity-60">
+<div class="p-6 flex flex-col md:flex-row gap-6">
+<div class="flex-grow">
+<div class="flex items-center gap-3 mb-2">
+<span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-red-100 dark:bg-red-900/50 text-red-700 dark:text-red-300">
+                                        Cancelada
+                                    </span>
+</div>
+<h3 class="text-xl font-bold text-gray-900 dark:text-white">Radiografía de Tórax</h3>
+<div class="mt-2 text-gray-600 dark:text-gray-400 space-y-1 text-sm">
+<p class="flex items-center gap-2"><span class="material-symbols-outlined text-base">calendar_today</span> 5 de Mayo, 2024</p>
+<p class="flex items-center gap-2"><span class="material-symbols-outlined text-base">schedule</span> 11:00 AM</p>
+<p class="flex items-center gap-2"><span class="material-symbols-outlined text-base">location_on</span> Sede: Clínica Sur</p>
+</div>
+<div class="mt-6">
+<button class="inline-flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium rounded-lg bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-300 cursor-not-allowed">
+<span class="material-symbols-outlined text-base">info</span>
+                                        Detalles
+                                    </button>
+</div>
+</div>
+<div class="md:w-1/3 lg:w-1/4 flex-shrink-0">
+<div class="w-full h-full bg-cover bg-center rounded-lg aspect-square md:aspect-auto" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBsdGAV_ocbA6gNba7F7ppJzodGEPnKXbfLzrJ-ccxRP6qEZtRYjepeD2wSRbvjY4SOPRNUFEXrWaulNJwjDiAUP5_dhl3oNeUAZvDyS5hu-wHZHu74JQZIzu2B-0G87cz2-HLNs1VnHiNa2HnUviC4XJEufcaaesqeVdS6lHqslgDMyS5n799Yeg885Je5fdTRVJhEPWdC023gcTpdd7eCt1WbfpkXqLR0EYEoks-fmDAZh6sZhQOBvC6dTrK2IxDEhTFTgv49j5k");'></div>
+</div>
+</div>
+</div>
+<div class="text-center py-16 px-6 bg-white dark:bg-background-dark/70 rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-700">
+<span class="material-symbols-outlined text-6xl text-gray-400 dark:text-gray-500 mx-auto">event_busy</span>
+<h3 class="mt-4 text-xl font-medium text-gray-900 dark:text-white">No tienes citas programadas</h3>
+<p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Cuando agendes una nueva cita, la verás aquí.</p>
+<div class="mt-6">
+<button class="inline-flex items-center justify-center gap-2 px-5 py-2.5 text-sm font-medium rounded-lg bg-primary text-white hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary dark:focus:ring-offset-background-dark">
+<span class="material-symbols-outlined text-base">add</span>
+                                Agendar Nueva Cita
+                            </button>
+</div>
+</div>
 </div>
 </div>
 </main>
-<footer class="mt-auto py-6 border-t border-border-light dark:border-border-dark">
-<div class="container mx-auto px-4 sm:px-6 lg:px-8 text-center text-sm text-muted-light dark:text-muted-dark">
-<p>Si tiene alguna pregunta, contáctenos al 555-123-4567 o visite nuestro sitio web: <a class="font-medium text-primary hover:underline" href="#">healthlab.com</a></p>
-</div>
-</footer>
 </div>
 
 </body></html>
