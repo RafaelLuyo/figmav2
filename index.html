@@ -2,11 +2,11 @@
 <html lang="en"><head>
 <meta charset="utf-8"/>
 <meta content="width=device-width, initial-scale=1.0" name="viewport"/>
-<title>HealthLab - Mis Citas</title>
+<title>HealthLab - Clinical Analysis Report</title>
 <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
 <link href="https://fonts.googleapis.com" rel="preconnect"/>
 <link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
 <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
 <script>
         tailwind.config = {
@@ -32,137 +32,135 @@
         }
     </script>
 <style>
-        .material-symbols-outlined {
-            font-variation-settings:
-            'FILL' 0,
-            'wght' 400,
-            'GRAD' 0,
-            'opsz' 24
+        .watermark {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-30deg);
+            opacity: 0.05;
+            pointer-events: none;
+            font-size: 8rem;
+            font-weight: 700;
+            color: #137fec;
         }
     </style>
 </head>
 <body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
 <div class="flex flex-col min-h-screen">
-<header class="bg-white dark:bg-background-dark/50 backdrop-blur-sm sticky top-0 z-10 border-b border-gray-200 dark:border-gray-800">
+<header class="bg-white dark:bg-background-dark/50 border-b border-gray-200 dark:border-gray-700 shadow-sm sticky top-0 z-10">
 <div class="container mx-auto px-4 sm:px-6 lg:px-8">
 <div class="flex items-center justify-between h-16">
-<div class="flex items-center gap-4">
-<div class="text-primary">
-<svg class="h-8 w-8" fill="none" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg"><path d="M6 6H42L36 24L42 42H6L12 24L6 6Z" fill="currentColor"></path></svg>
+<div class="flex items-center gap-3">
+<div class="text-primary size-7">
+<svg fill="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 14H9v-2h2v2zm0-4H9V7h2v5zm4 4h-2v-2h2v2zm0-4h-2V7h2v5z"></path></svg>
 </div>
 <h1 class="text-xl font-bold text-gray-900 dark:text-white">HealthLab</h1>
 </div>
-<nav class="hidden md:flex items-center gap-8">
-<a class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary" href="#">Inicio</a>
-<a class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary" href="#">Servicios</a>
-<a class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary" href="#">Resultados</a>
-<a class="text-sm font-medium text-gray-600 dark:text-gray-300 hover:text-primary dark:hover:text-primary" href="#">Contacto</a>
-</nav>
 <div class="flex items-center gap-4">
-<button class="p-2 rounded-full text-gray-600 dark:text-gray-300 hover:bg-gray-100 dark:hover:bg-gray-800">
+<button class="p-2 rounded-full text-gray-500 dark:text-gray-400 hover:bg-gray-100 dark:hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary">
 <span class="material-symbols-outlined">notifications</span>
 </button>
-<div class="w-10 h-10 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBymLXhmwS9D3S6K3jh90gZ7lSsxP4KFFCoE-Td3TzgxBVvwy6fJ1ZuzhgUJrTd3iRjrFDj-fsu08johdZSRVELTnITPqCRmJ8qMYdHUEKWnwzkGJLk7ewDGs2A9i-lPm6xEqY8VOhmDh9VkQK9mdHe-91Yn7wAPBfdlztFiYK581bwnuK_gHa8-ZmCbE07p6BT3JGdOQACYlnQ9gn5RvfLqpVhHuiB80VgCZGmpMgkLWu7sr5luAXz1HUDmqWJZqW8v3JcBwcfvXA");'></div>
+<div class="bg-center bg-no-repeat aspect-square bg-cover rounded-full size-10" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCncIJliVMV7dl0NSQynP9P4_gRC3Z8JnxpSFOAHnA9YQjBMpweHCJM0jR_Ke4cNFqrDm1VJog4cvf6k0rb5vzkGfwKPLp-FGt_UrKT3tUexoiqvn-MUcdnguE_Ylw4cvcWRpn2WJPZ9T2mfZlCAWJoLnyJsymBhxJDhk4nTyWyRgcgGG9MW8PCeH0DRSgQsNtTxQ8mKHVGgd1QHGOejdJqDM6TS_xlF5Nx5sFd3Pp-gT0B--WbXmSmqcU7m9cYp8XQ9OafqAF2JXc");'></div>
 </div>
 </div>
 </div>
 </header>
-<main class="flex-grow container mx-auto px-4 sm:px-6 lg:px-8 py-8">
-<div class="max-w-4xl mx-auto">
-<h2 class="text-3xl font-bold text-gray-900 dark:text-white mb-8">Mis Citas</h2>
-<div class="space-y-6">
-<div class="bg-white dark:bg-background-dark/70 rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg border border-transparent dark:border-gray-800">
-<div class="p-6 flex flex-col md:flex-row gap-6">
-<div class="flex-grow">
-<div class="flex items-center gap-3 mb-2">
-<span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-blue-100 dark:bg-blue-900/50 text-primary">
-                                        Próxima
-                                    </span>
+<main class="flex-grow container mx-auto p-4 sm:p-6 lg:p-8">
+<div class="max-w-4xl mx-auto bg-white dark:bg-background-dark/70 rounded-lg shadow-lg relative overflow-hidden">
+<div class="watermark">HealthLab</div>
+<div class="p-6 md:p-8 border-b border-gray-200 dark:border-gray-700">
+<h2 class="text-3xl font-bold text-gray-900 dark:text-white">Hemograma Completo</h2>
+<p class="text-gray-500 dark:text-gray-400 mt-1">Fecha del Informe: 15 de Marzo de 2024</p>
 </div>
-<h3 class="text-xl font-bold text-gray-900 dark:text-white">Análisis de Sangre</h3>
-<div class="mt-2 text-gray-600 dark:text-gray-400 space-y-1 text-sm">
-<p class="flex items-center gap-2"><span class="material-symbols-outlined text-base">calendar_today</span> 15 de Julio, 2024</p>
-<p class="flex items-center gap-2"><span class="material-symbols-outlined text-base">schedule</span> 10:00 AM</p>
-<p class="flex items-center gap-2"><span class="material-symbols-outlined text-base">location_on</span> Sede: Clínica Central</p>
-</div>
-<div class="mt-6 flex flex-wrap gap-3">
-<button class="inline-flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium rounded-lg bg-primary text-white hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary dark:focus:ring-offset-background-dark">
-<span class="material-symbols-outlined text-base">edit_calendar</span>
-                                        Reprogramar
-                                    </button>
-<button class="inline-flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium rounded-lg bg-primary/10 dark:bg-primary/20 text-primary hover:bg-primary/20 dark:hover:bg-primary/30 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary dark:focus:ring-offset-background-dark">
-<span class="material-symbols-outlined text-base">cancel</span>
-                                        Cancelar Cita
-                                    </button>
-</div>
-</div>
-<div class="md:w-1/3 lg:w-1/4 flex-shrink-0">
-<div class="w-full h-full bg-cover bg-center rounded-lg aspect-square md:aspect-auto" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBIcq5AgydtDEjfmPt8ockPmw2QjbMQtGn1WzqgIIWQbBp5vkkP_OocHSNqkg91A0rJwYGSwsANzSHX3hCRfJEZzO1ZjV4gfq1wCrLQV2rzfkZwziCPPCW7OCqumnpQx3OGzUzdjpbEu1CwsaciDLYdQkbfRAaDr_XEaUJ5mycBREaqZMhJ-rZK99IvsiPZvbyHZ248E8x5c65XYBYaZ2O_pIPyXf1cwyuwdcFYkAkAkIffihWMa7NF0Whhf52s53MoUYjaAad3Xns");'></div>
-</div>
-</div>
-</div>
-<div class="bg-white dark:bg-background-dark/70 rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg border border-transparent dark:border-gray-800">
-<div class="p-6 flex flex-col md:flex-row gap-6">
-<div class="flex-grow">
-<div class="flex items-center gap-3 mb-2">
-<span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-green-100 dark:bg-green-900/50 text-green-700 dark:text-green-300">
-                                        Completada
-                                    </span>
-</div>
-<h3 class="text-xl font-bold text-gray-900 dark:text-white">Examen de Orina</h3>
-<div class="mt-2 text-gray-600 dark:text-gray-400 space-y-1 text-sm">
-<p class="flex items-center gap-2"><span class="material-symbols-outlined text-base">calendar_today</span> 20 de Junio, 2024</p>
-<p class="flex items-center gap-2"><span class="material-symbols-outlined text-base">schedule</span> 09:30 AM</p>
-<p class="flex items-center gap-2"><span class="material-symbols-outlined text-base">location_on</span> Sede: Clínica Norte</p>
-</div>
-<div class="mt-6">
-<button class="inline-flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium rounded-lg bg-primary text-white hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary dark:focus:ring-offset-background-dark">
-<span class="material-symbols-outlined text-base">description</span>
-                                        Ver Resultados
-                                    </button>
+<div class="p-6 md:p-8">
+<div class="overflow-x-auto">
+<table class="w-full text-left">
+<thead class="border-b border-gray-200 dark:border-gray-700">
+<tr>
+<th class="py-3 pr-4 font-semibold text-gray-600 dark:text-gray-300">Parámetro</th>
+<th class="py-3 px-4 font-semibold text-gray-600 dark:text-gray-300 text-center">Resultado</th>
+<th class="py-3 px-4 font-semibold text-gray-600 dark:text-gray-300">Rango de Referencia</th>
+<th class="py-3 pl-4 font-semibold text-gray-600 dark:text-gray-300">Unidad</th>
+</tr>
+</thead>
+<tbody>
+<tr class="border-b border-gray-200 dark:border-gray-700">
+<td class="py-4 pr-4 font-medium text-gray-800 dark:text-gray-200">Recuento de Glóbulos Blancos</td>
+<td class="py-4 px-4 text-center"><span class="bg-green-100 text-green-800 dark:bg-green-900/50 dark:text-green-300 font-semibold px-3 py-1 rounded-full text-sm">7.5</span></td>
+<td class="py-4 px-4 text-gray-600 dark:text-gray-400">4.5 - 11.0</td>
+<td class="py-4 pl-4 text-gray-600 dark:text-gray-400">x10⁹/L</td>
+</tr>
+<tr class="border-b border-gray-200 dark:border-gray-700">
+<td class="py-4 pr-4 font-medium text-gray-800 dark:text-gray-200">Recuento de Glóbulos Rojos</td>
+<td class="py-4 px-4 text-center"><span class="bg-red-100 text-red-800 dark:bg-red-900/50 dark:text-red-300 font-semibold px-3 py-1 rounded-full text-sm">4.1</span></td>
+<td class="py-4 px-4 text-gray-600 dark:text-gray-400">4.2 - 5.4</td>
+<td class="py-4 pl-4 text-gray-600 dark:text-gray-400">x10¹²/L</td>
+</tr>
+<tr class="border-b border-gray-200 dark:border-gray-700">
+<td class="py-4 pr-4 font-medium text-gray-800 dark:text-gray-200">Hemoglobina</td>
+<td class="py-4 px-4 text-center"><span class="bg-green-100 text-green-800 dark:bg-green-900/50 dark:text-green-300 font-semibold px-3 py-1 rounded-full text-sm">14.2</span></td>
+<td class="py-4 px-4 text-gray-600 dark:text-gray-400">13.5 - 17.5</td>
+<td class="py-4 pl-4 text-gray-600 dark:text-gray-400">g/dL</td>
+</tr>
+<tr class="border-b border-gray-200 dark:border-gray-700">
+<td class="py-4 pr-4 font-medium text-gray-800 dark:text-gray-200">Hematocrito</td>
+<td class="py-4 px-4 text-center"><span class="bg-green-100 text-green-800 dark:bg-green-900/50 dark:text-green-300 font-semibold px-3 py-1 rounded-full text-sm">42.5</span></td>
+<td class="py-4 px-4 text-gray-600 dark:text-gray-400">40.0 - 52.0</td>
+<td class="py-4 pl-4 text-gray-600 dark:text-gray-400">%</td>
+</tr>
+<tr>
+<td class="py-4 pr-4 font-medium text-gray-800 dark:text-gray-200">Recuento de Plaquetas</td>
+<td class="py-4 px-4 text-center"><span class="bg-yellow-100 text-yellow-800 dark:bg-yellow-900/50 dark:text-yellow-300 font-semibold px-3 py-1 rounded-full text-sm">145</span></td>
+<td class="py-4 px-4 text-gray-600 dark:text-gray-400">150 - 400</td>
+<td class="py-4 pl-4 text-gray-600 dark:text-gray-400">x10⁹/L</td>
+</tr>
+</tbody>
+</table>
 </div>
 </div>
-<div class="md:w-1/3 lg:w-1/4 flex-shrink-0">
-<div class="w-full h-full bg-cover bg-center rounded-lg aspect-square md:aspect-auto" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuCzsh8A3BJylhrZ7W6xpHnVfBcOXmZb4K5uQoq9Vz0rp6cl1v3JOHoay6ZNkXgsWUPsmEwCQCf7-tWmpVbGdBfRvEoCHPX9jXbyxxr56Li_YCI1_eAeKpLHNAkcBCBHzEkswBP4NOo1VhIpDEYphw6svsy8PS3eWYTSNhMxSMF3TGWBDX0ON9gxjaFSkQBRcUNenxfyKwxXjxTvxTURWTIh6G56jMB7cG1HQIuN3vJymO8l4doyCtT75_E0QOzBSVauIiV7IOPOKA8");'></div>
+<div class="p-6 md:p-8 border-t border-gray-200 dark:border-gray-700">
+<h3 class="text-xl font-bold text-gray-900 dark:text-white">Observaciones del Patólogo</h3>
+<p class="text-gray-600 dark:text-gray-400 mt-2">Ligera trombocitopenia y anisocitosis eritrocitaria observada. Se recomienda seguimiento y correlación clínica.</p>
+</div>
+<div class="p-6 md:p-8 border-t border-gray-200 dark:border-gray-700">
+<h3 class="text-xl font-bold text-gray-900 dark:text-white mb-4">Tendencia de Hemoglobina (Últimos 6 meses)</h3>
+<div class="bg-gray-50 dark:bg-background-dark p-4 rounded-lg">
+<div class="flex items-start gap-4">
+<div class="flex-1">
+<p class="text-sm font-medium text-gray-600 dark:text-gray-400">Valor Actual</p>
+<p class="text-2xl font-bold text-gray-900 dark:text-white">14.2 g/dL</p>
+<div class="flex items-center gap-1 mt-1 text-sm text-green-600 dark:text-green-400">
+<span class="material-symbols-outlined text-base">trending_up</span>
+<span>+2% vs. mes anterior</span>
 </div>
 </div>
-</div>
-<div class="bg-white dark:bg-background-dark/70 rounded-xl shadow-md overflow-hidden transition-all duration-300 hover:shadow-lg border border-transparent dark:border-gray-800 opacity-60">
-<div class="p-6 flex flex-col md:flex-row gap-6">
-<div class="flex-grow">
-<div class="flex items-center gap-3 mb-2">
-<span class="inline-flex items-center px-3 py-1 rounded-full text-sm font-medium bg-red-100 dark:bg-red-900/50 text-red-700 dark:text-red-300">
-                                        Cancelada
-                                    </span>
-</div>
-<h3 class="text-xl font-bold text-gray-900 dark:text-white">Radiografía de Tórax</h3>
-<div class="mt-2 text-gray-600 dark:text-gray-400 space-y-1 text-sm">
-<p class="flex items-center gap-2"><span class="material-symbols-outlined text-base">calendar_today</span> 5 de Mayo, 2024</p>
-<p class="flex items-center gap-2"><span class="material-symbols-outlined text-base">schedule</span> 11:00 AM</p>
-<p class="flex items-center gap-2"><span class="material-symbols-outlined text-base">location_on</span> Sede: Clínica Sur</p>
-</div>
-<div class="mt-6">
-<button class="inline-flex items-center justify-center gap-2 px-4 py-2 text-sm font-medium rounded-lg bg-gray-200 dark:bg-gray-700 text-gray-600 dark:text-gray-300 cursor-not-allowed">
-<span class="material-symbols-outlined text-base">info</span>
-                                        Detalles
-                                    </button>
-</div>
-</div>
-<div class="md:w-1/3 lg:w-1/4 flex-shrink-0">
-<div class="w-full h-full bg-cover bg-center rounded-lg aspect-square md:aspect-auto" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBsdGAV_ocbA6gNba7F7ppJzodGEPnKXbfLzrJ-ccxRP6qEZtRYjepeD2wSRbvjY4SOPRNUFEXrWaulNJwjDiAUP5_dhl3oNeUAZvDyS5hu-wHZHu74JQZIzu2B-0G87cz2-HLNs1VnHiNa2HnUviC4XJEufcaaesqeVdS6lHqslgDMyS5n799Yeg885Je5fdTRVJhEPWdC023gcTpdd7eCt1WbfpkXqLR0EYEoks-fmDAZh6sZhQOBvC6dTrK2IxDEhTFTgv49j5k");'></div>
+<div class="h-48 w-full flex-1">
+<svg fill="none" height="100%" preserveAspectRatio="none" viewBox="0 0 472 150" width="100%" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25" stroke="#137fec" stroke-linecap="round" stroke-width="3"></path>
+<path d="M0 109C18.1538 109 18.1538 21 36.3077 21C54.4615 21 54.4615 41 72.6154 41C90.7692 41 90.7692 93 108.923 93C127.077 93 127.077 33 145.231 33C163.385 33 163.385 101 181.538 101C199.692 101 199.692 61 217.846 61C236 61 236 45 254.154 45C272.308 45 272.308 121 290.462 121C308.615 121 308.615 149 326.769 149C344.923 149 344.923 1 363.077 1C381.231 1 381.231 81 399.385 81C417.538 81 417.538 129 435.692 129C453.846 129 453.846 25 472 25V149H0V109Z" fill="url(#trend-gradient)"></path>
+<defs><linearGradient gradientUnits="userSpaceOnUse" id="trend-gradient" x1="236" x2="236" y1="1" y2="149"><stop stop-color="#137fec" stop-opacity="0.2"></stop><stop offset="1" stop-color="#137fec" stop-opacity="0"></stop></linearGradient></defs>
+</svg>
 </div>
 </div>
 </div>
-<div class="text-center py-16 px-6 bg-white dark:bg-background-dark/70 rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-700">
-<span class="material-symbols-outlined text-6xl text-gray-400 dark:text-gray-500 mx-auto">event_busy</span>
-<h3 class="mt-4 text-xl font-medium text-gray-900 dark:text-white">No tienes citas programadas</h3>
-<p class="mt-2 text-sm text-gray-500 dark:text-gray-400">Cuando agendes una nueva cita, la verás aquí.</p>
-<div class="mt-6">
-<button class="inline-flex items-center justify-center gap-2 px-5 py-2.5 text-sm font-medium rounded-lg bg-primary text-white hover:bg-opacity-90 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-primary dark:focus:ring-offset-background-dark">
-<span class="material-symbols-outlined text-base">add</span>
-                                Agendar Nueva Cita
-                            </button>
 </div>
+<div class="flex flex-col sm:flex-row items-center justify-between p-6 md:p-8 border-t border-gray-200 dark:border-gray-700 gap-4">
+<div class="flex items-center gap-4">
+<div class="w-24 h-12 bg-center bg-contain bg-no-repeat" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuD9WhPRLRfDUCiKKCzV5h8MoIoJn029PaedDV1hxuQaSslYyWiAO6ocA849vpdmUt3QpGDpyR_SnviG2RZ9f6BfeE63SGdbAmnNQ619Rqfk5UdZ5dS9j5-MRxGmjlCvINZLqO409Y_b9VgBTW3GVh12JZOCJo5JXDEndoksOV7rhp7YqNYYAUlpQTA_UYu6lGGx2tmwXxbAJnZaHv3IRZ-Cz308gMhMyPy8D2gN7C-tMFHOkfDL17Hp7l5ozW9GIncjXYenM6Qhb1Y");'></div>
+<div>
+<p class="font-bold text-gray-900 dark:text-white">Dr. Juan Pérez</p>
+<p class="text-sm text-gray-500 dark:text-gray-400">Patólogo Clínico, C.P. 123456</p>
+</div>
+</div>
+<div class="flex gap-3">
+<button class="flex items-center justify-center gap-2 h-11 px-5 font-semibold rounded-lg bg-gray-100 dark:bg-gray-700 text-gray-800 dark:text-gray-200 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors">
+<span class="material-symbols-outlined">share</span>
+                            Compartir
+                        </button>
+<button class="flex items-center justify-center gap-2 h-11 px-5 font-semibold text-white rounded-lg bg-primary hover:bg-primary/90 transition-colors">
+<span class="material-symbols-outlined">download</span>
+                            Descargar PDF
+                        </button>
 </div>
 </div>
 </div>
